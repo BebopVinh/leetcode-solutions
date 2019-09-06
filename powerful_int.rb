@@ -1,17 +1,23 @@
 require 'pry'
 
 def powerful_integers(x, y, bound)
+  #some default return cases
    return [] if bound == 0 || ( bound == 1 && x == bound && y == bound )
    return [2] if x == 1 && y == 1
-   ans, i  = 0, 0
-   
+
+   i = 0
    hash = {}
+
    until x ** i > bound
-      (0..i).to_a.each do |j|
-         ans = (x ** i) + (y ** j)
-         hash[ans] = 1
+      ans, j = 0, 0
+      until ans >= bound
+        ans = x ** i + y ** j
+        hash[ans] = true if !hash[ans] && ans <= bound
+        break if y == 1
+        j += 1
       end
-   i += 1
+    break if x == 1
+    i += 1
    end
    puts hash.keys
    hash.keys
