@@ -1,19 +1,5 @@
 require 'pry'
 
-# def first_uniq_char(s)
-#     hash = {}
-#     hash.default = 0
-#     arr = s.split("")
-#     arr.each do |n|
-#         hash[n] += 1
-#     end
-#     # keys = hash.keys
-#     values = hash.values
-#     index = values.find_index(1)
-#     return -1 if index == nil
-#     c = hash.keys[index]
-#     arr.find_index(c)
-# end
 
 def first_uniq_char(s)
     count = {}
