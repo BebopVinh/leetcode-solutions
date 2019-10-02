@@ -12,6 +12,7 @@ def count_substrings(s)
     else
         right = s.length/2
         left = right - 1
+        total += s.length
     end
     
     repeat = false
@@ -30,15 +31,21 @@ def count_substrings(s)
         right += 1
     end
     
-    while s.length.even? && right < s.length
+    # while s.length.even? && right < s.length
 
-        if s[right] != s[left]
-            total += 2
-        elsif s[right] == s[left] && right >= (s.length/2 + 1)
-            total += 5
-        elsif s[right] == s[left]
-            total += 3
-        end
+    #     if s[right] != s[left]
+    #         total += 2
+    #     elsif s[right] == s[left] && right >= (s.length/2 + 1)
+    #         total += 5
+    #     elsif s[right] == s[left]
+    #         total += 3
+    #     end
+    #     left -= 1
+    #     right += 1
+    # end
+
+    while s.length.even? && left >= 0 && right < s.length && s[left] == s[right]
+        (s.length > 2)? total += 2 : total += 1
         left -= 1
         right += 1
     end
