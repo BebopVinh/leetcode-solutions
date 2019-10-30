@@ -27,7 +27,7 @@ def is_happy(n)
          break
       end
    end
-   (slow == fast == 1) ? true : false
+   (slow == 1 && fast == 1) ? true : false
 end
 
 def square_num(n)
