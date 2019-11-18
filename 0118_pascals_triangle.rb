@@ -18,13 +18,11 @@ end
 
 def mod_middle(row, prev)
     j = 1
-    binding.pry
     until j == row.length
         row[j] = prev[j] + prev[j - 1]
         j += 1
     end
     row
-    binding.pry
 end
 
 generate(5)
