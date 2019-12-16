@@ -1,5 +1,3 @@
-require 'pry'
-
 def generate(num_rows)
     i = 1
     ans = []
