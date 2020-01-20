@@ -1,5 +1,3 @@
-require 'pry'
-
 def generate(num_rows)
     i = 1
     ans = []
@@ -18,13 +16,11 @@ end
 
 def mod_middle(row, prev)
     j = 1
-    binding.pry
     until j == row.length
         row[j] = prev[j] + prev[j - 1]
         j += 1
     end
     row
-    binding.pry
 end
 
 generate(5)
